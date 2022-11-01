@@ -1,0 +1,7 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #08a2a4, #05a835);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

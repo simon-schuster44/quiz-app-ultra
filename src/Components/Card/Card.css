@@ -11,6 +11,11 @@
   justify-content: space-around;
   position: relative;
 }
+
+.hide {
+  opacity: 0;
+}
+
 .answer-button {
   padding: 7px 40px;
   font-size: 1em;

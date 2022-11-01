@@ -5,15 +5,18 @@ import Navigation from "./Components/Navigation/Navigation.js";
 import "./Components/Navigation/Navigation.css";
 import Card from "./Components/Card/Card.js";
 import "./Components/Card/Card.css";
+import "./Components/Body/Body.css";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Card />
-      <Card />
-      <Card />
-      <Navigation />
+      <body>
+        <Header />
+        <Card />
+        <Card />
+        <Card />
+        <Navigation />
+      </body>
     </div>
   );
 }

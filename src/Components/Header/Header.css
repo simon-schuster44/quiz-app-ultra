@@ -1,0 +1,13 @@
+header {
+  text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dbdada;
+  box-shadow: 0 0 10px black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}

@@ -24,10 +24,9 @@
 .categories {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5em;
-  position: relative;
-  bottom: 3%;
-  left: -25%;
+  width: 100%;
 }
 
 .categories__tag {
@@ -47,4 +46,17 @@
   font-style: italic;
   margin: 15px 0px;
   transition: 1s;
+}
+
+.bookmark {
+  position: absolute;
+  right: 15px;
+  top: -20px;
+  width: 50px;
+  background-color: #dbdada;
+  border-radius: 8px;
+}
+
+.bookmark--hide {
+  z-index: -1;
 }

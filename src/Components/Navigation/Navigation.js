@@ -5,13 +5,16 @@ import { ReactComponent as BookmarkSvg } from "../../img/bookmark-solid.svg";
 import { ReactComponent as PlusSvg } from "../../img/plus-solid.svg";
 import { ReactComponent as ProfileSvg } from "../../img/user-solid.svg";
 
-function Navigation() {
+function Navigation({}) {
   const [siteState, setSiteState] = useState("home");
 
+  function navigate(value){
+setSiteState(value);
+  }
   return (
     <footer>
       <HomeSvg
-        onClick={() => setSiteState("home")}
+        onClick={() => navigate("home")}
         className={`icon ${siteState === "home" ? "button__active" : ""}`}
       />
       <BookmarkSvg
@@ -19,7 +22,7 @@ function Navigation() {
         className={`icon ${siteState === "bookmark" ? "button__active" : ""}`}
       />
       <PlusSvg
-        onClick={() => setSiteState("plus")}
+        onClick={() => navigate("plus")}
         className={`icon ${siteState === "plus" ? "button__active" : ""}`}
       />
       <ProfileSvg

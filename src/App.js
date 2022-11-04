@@ -1,21 +1,45 @@
 import "./App.css";
 import Header from "./Components/Header/Header.js";
 import Navigation from "./Components/Navigation/Navigation.js";
-import Home from "./Components/Home/Home";
 import "./Components/Body/Body.css";
-import Form from "./Components/Form/Form"
-import Main from "./Components/Main/Main"
-import {useState} from "react";
-
-
-
+import Main from "./Components/Main/Main";
+import { useEffect, useState } from "react";
+import { db } from "./db";
 
 function App() {
+  //const [questions, setQuestions] = useState(db);
+
+  const [questions, setQuestions] = useState(() => {
+    return JSON.parse(localStorage.getItem("questions")) ?? db;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(questions));
+  }, [questions]);
+
+  function logQuestions() {
+    console.log(questions);
+  }
+  function clearLocalStorage() {
+    localStorage.setItem("questions", JSON.stringify(db));
+  }
+
+  const [pageState, setPageState] = useState("home");
+
   return (
     <div className="App">
       <Header />
-      <Main />
-      <Navigation />
+      <div className="test-area">
+        <button onClick={logQuestions}>Log all questions</button>
+        <button onClick={clearLocalStorage}>Clear local Storage</button>
+      </div>
+      <Main
+        pageState={pageState}
+        questions={questions}
+        setQuestions={setQuestions}
+      />
+
+      <Navigation pageState={pageState} setPageState={setPageState} />
     </div>
   );
 }

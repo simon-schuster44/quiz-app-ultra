@@ -7,15 +7,15 @@ import { useEffect, useState } from "react";
 import { db } from "./db";
 
 function App() {
-  const [questions, setQuestions] = useState(db);
+  //const [questions, setQuestions] = useState(db);
 
-  // const [questions, setQuestions] = useState(() => {
-  //   return JSON.parse(localStorage.getItem("questions")) ?? db;
-  // });
+  const [questions, setQuestions] = useState(() => {
+    return JSON.parse(localStorage.getItem("questions")) ?? db;
+  });
 
-  // useEffect(() => {
-  //   localStorage.setItem("questions", JSON.stringify(questions));
-  // }, [questions]);
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(questions));
+  }, [questions]);
 
   function logQuestions() {
     console.log(questions);
@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="test-area">
-        <button onClick={logQuestions}>Test</button>
+        <button onClick={logQuestions}>Log all questions</button>
         <button onClick={clearLocalStorage}>Clear local Storage</button>
       </div>
       <Main

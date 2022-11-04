@@ -2,9 +2,17 @@ import "./Profile.css";
 import profilePicture from "../../img/profile-picture.jpeg";
 import questionIcon from "../../img/question-solid.svg";
 import bookmarkIcon from "../../img/bookmark-solid.svg";
+import settingsIcon from "../../img/gear-solid.svg";
+import Settings from "../Settings/Settings";
 import { useState } from "react";
 
 export default function Profile({ questions }) {
+  const [settingsState, setSettingsState] = useState(false);
+
+  function toggleSettingsState() {
+    setSettingsState(!settingsState);
+  }
+
   return (
     <div className="profile">
       <section className="profile__head">
@@ -20,6 +28,12 @@ export default function Profile({ questions }) {
           voluptates similique nobis impedit perferendis quis dolore a
           voluptatum!
         </p>
+        <img
+          src={settingsIcon}
+          className="settings-icon"
+          onClick={toggleSettingsState}
+        />
+        <Settings settingsState={settingsState} />
       </section>
       <section className="profile__counters">
         <div className="counter">

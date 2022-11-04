@@ -1,0 +1,26 @@
+.settings {
+  position: absolute;
+  right: 30px;
+  border-radius: 16px;
+  background-color: rgb(133, 133, 133);
+  box-shadow: 2px 2px 5px black;
+  opacity: 0;
+  transition: 0.5s;
+}
+.show {
+  opacity: 0.9;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.settings div {
+  padding: 0 10px;
+  text-align: left;
+}
+
+.settings button {
+  margin: 0 10px 20px 10px;
+}

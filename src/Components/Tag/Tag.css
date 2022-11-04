@@ -1,0 +1,6 @@
+.categories__tag {
+  border: solid 2px black;
+  border-radius: 15%;
+  padding: 0.5em;
+  background-color: lightgrey;
+}

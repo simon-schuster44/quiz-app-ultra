@@ -1,9 +1,18 @@
-import Card from "../Card/Card"
+import Card from "../Card/Card";
 
-export default function Home(){
-    return <>
-    <Card/>
-    <Card/>
-    <Card/>
+export default function Home({ questions, setQuestions }) {
+  return (
+    <>
+      {questions.map((oneQuestion) => {
+        return (
+          <Card
+            questions={questions}
+            oneQuestion={oneQuestion}
+            setQuestions={setQuestions}
+            key={oneQuestion.id}
+          />
+        );
+      })}
     </>
+  );
 }

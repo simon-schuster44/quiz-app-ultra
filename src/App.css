@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.test-area {
+  background-color: red;
+  border: 2px solid yellow;
+  margin-top: 100px;
+}

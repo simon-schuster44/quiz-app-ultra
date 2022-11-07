@@ -4,14 +4,14 @@ import { ReactComponent as BookmarkSvg } from "../../img/bookmark-solid.svg";
 import { ReactComponent as BookmarkEmptySvg } from "../../img/bookmark-regular.svg";
 import Tag from "../Tag/Tag";
 
-function Card({ questions, setQuestions, oneQuestion }) {
+function Card({ questions, changeQuestions, oneQuestion }) {
   const [answerState, setAnswerState] = useState(false);
   function toggleAnswerState() {
     setAnswerState(!answerState);
   }
 
   function toggleBookmark() {
-    setQuestions((questions) =>
+    changeQuestions(
       questions.map((question) => {
         return {
           ...question,

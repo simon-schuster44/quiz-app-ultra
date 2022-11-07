@@ -1,6 +1,6 @@
 import Card from "../Card/Card";
 
-export default function Bookmarks({ questions, setQuestions }) {
+export default function Bookmarks({ questions, changeQuestions }) {
   return (
     <>
       {questions.map((oneQuestion) => {
@@ -8,7 +8,7 @@ export default function Bookmarks({ questions, setQuestions }) {
           return (
             <Card
               oneQuestion={oneQuestion}
-              setQuestions={setQuestions}
+              changeQuestions={changeQuestions}
               questions={questions}
               key={oneQuestion.id}
             />

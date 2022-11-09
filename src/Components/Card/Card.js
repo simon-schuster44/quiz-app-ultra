@@ -30,7 +30,7 @@ function Card({ questions, changeQuestions, oneQuestion }) {
       <button onClick={toggleAnswerState} className="answer-button">
         {answerState ? "Hide Answer" : "Show Answer"}
       </button>
-      <h3 className={`answer ${answerState ? "" : "hide"}`} data-js="answer">
+      <h3 className={`answer ${answerState ? "" : "hide"}`}>
         {oneQuestion.answer}
       </h3>
       <ul className="categories">

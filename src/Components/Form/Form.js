@@ -54,9 +54,6 @@ export default function Form({ questions, addQuestion }) {
             SUBMIT
           </button>
         </form>
-        <div className="overlay" data-js="overlay">
-          <h1>Added Card!</h1>
-        </div>
       </div>
     </>
   );

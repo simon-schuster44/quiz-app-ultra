@@ -3,19 +3,11 @@ import Header from "./Components/Header/Header.js";
 import Navigation from "./Components/Navigation/Navigation.js";
 import "./Components/Body/Body.css";
 import Main from "./Components/Main/Main";
-import { useEffect, useState } from "react";
-import { db } from "./db";
-import useLocalStorage from "./Hooks/useLocalStorage";
+import { useContext, useEffect, useState } from "react";
+import { QuestionContext } from "./context/questions-context";
 
 function App() {
-  const [questions, setQuestions] = useLocalStorage(db, "questions");
-
-  function logQuestions() {
-    console.log(questions);
-  }
-  function clearLocalStorage() {
-    localStorage.setItem("questions", JSON.stringify(db));
-  }
+  const { questions, setQuestions } = useContext(QuestionContext);
 
   const [pageState, setPageState] = useState("home");
 
@@ -34,10 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <div className="test-area">
-        <button onClick={logQuestions}>Log all questions</button>
-        <button onClick={clearLocalStorage}>Clear local Storage</button>
-      </div> */}
+
       <Main
         pageState={pageState}
         questions={questions}

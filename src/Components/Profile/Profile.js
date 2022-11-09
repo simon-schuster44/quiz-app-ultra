@@ -33,7 +33,10 @@ export default function Profile({ questions }) {
           className="settings-icon"
           onClick={toggleSettingsState}
         />
-        <Settings settingsState={settingsState} />
+        <Settings
+          settingsState={settingsState}
+          setSettingsState={setSettingsState}
+        />
       </section>
       <section className="profile__counters">
         <div className="counter">

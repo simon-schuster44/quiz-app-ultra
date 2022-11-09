@@ -5,23 +5,28 @@ import Form from "../Form/Form";
 import Profile from "../Profile/Profile";
 import Bookmarks from "../Bookmarks/Bookmarks";
 
-export default function Main({ pageState, questions, setQuestions }) {
+export default function Main({
+  pageState,
+  questions,
+  changeQuestions,
+  addQuestion,
+}) {
   if (pageState === "home") {
     return (
       <main>
-        <Home questions={questions} setQuestions={setQuestions} />
+        <Home questions={questions} changeQuestions={changeQuestions} />
       </main>
     );
   } else if (pageState === "bookmark") {
     return (
       <main>
-        <Bookmarks questions={questions} setQuestions={setQuestions} />
+        <Bookmarks questions={questions} changeQuestions={changeQuestions} />
       </main>
     );
   } else if (pageState === "form") {
     return (
       <main>
-        <Form questions={questions} setQuestions={setQuestions} />
+        <Form questions={questions} addQuestion={addQuestion} />
       </main>
     );
   } else if (pageState === "profile") {

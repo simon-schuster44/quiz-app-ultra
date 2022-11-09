@@ -1,28 +1,24 @@
 import "./Form.css";
-export default function Form({ questions, setQuestions }) {
+export default function Form({ questions, addQuestion }) {
   function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
-    const newQuestion = Object.assign(
-      {
-        id: questions.length,
-      },
-      { question: data.question },
-      { answer: data.answer },
-      { isBookmarked: false },
-      { tags: [data.tag1, data.tag2, data.tag3] }
-    );
-    let array = questions;
-    array.push(newQuestion);
-    setQuestions(array);
-    document.querySelector('[data-js="form"]').reset();
+    const newQuestion = {
+      id: questions.length,
+      question: data.question,
+      answer: data.answer,
+      isBookmarked: false,
+      tags: [data.tag1, data.tag2, data.tag3],
+    };
+    addQuestion(newQuestion);
+    event.target.reset();
   }
 
   return (
     <>
       <div className="template">
         <h2>New Question</h2>
-        <form data-js="form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="question">Question</label>
           <textarea
             name="question"
@@ -58,9 +54,6 @@ export default function Form({ questions, setQuestions }) {
             SUBMIT
           </button>
         </form>
-        <div className="overlay" data-js="overlay">
-          <h1>Added Card!</h1>
-        </div>
       </div>
     </>
   );

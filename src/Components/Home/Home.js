@@ -1,6 +1,6 @@
 import Card from "../Card/Card";
 
-export default function Home({ questions, setQuestions }) {
+export default function Home({ questions, changeQuestions }) {
   return (
     <>
       {questions.map((oneQuestion) => {
@@ -8,7 +8,7 @@ export default function Home({ questions, setQuestions }) {
           <Card
             questions={questions}
             oneQuestion={oneQuestion}
-            setQuestions={setQuestions}
+            changeQuestions={changeQuestions}
             key={oneQuestion.id}
           />
         );

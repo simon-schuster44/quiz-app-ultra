@@ -1,27 +1,26 @@
 import "./Navigation.css";
-import { useState } from "react";
 import { ReactComponent as HomeSvg } from "../../img/house-solid.svg";
 import { ReactComponent as BookmarkSvg } from "../../img/bookmark-solid.svg";
 import { ReactComponent as PlusSvg } from "../../img/plus-solid.svg";
 import { ReactComponent as ProfileSvg } from "../../img/user-solid.svg";
 
-function Navigation({ pageState, setPageState }) {
+function Navigation({ pageState, changePageState }) {
   return (
     <footer>
       <HomeSvg
-        onClick={() => setPageState("home")}
+        onClick={() => changePageState("home")}
         className={`icon ${pageState === "home" ? "button__active" : ""}`}
       />
       <BookmarkSvg
-        onClick={() => setPageState("bookmark")}
+        onClick={() => changePageState("bookmark")}
         className={`icon ${pageState === "bookmark" ? "button__active" : ""}`}
       />
       <PlusSvg
-        onClick={() => setPageState("form")}
+        onClick={() => changePageState("form")}
         className={`icon ${pageState === "form" ? "button__active" : ""}`}
       />
       <ProfileSvg
-        onClick={() => setPageState("profile")}
+        onClick={() => changePageState("profile")}
         className={`icon ${pageState === "profile" ? "button__active" : ""}`}
       />
     </footer>

@@ -2,7 +2,6 @@
   margin: 150px auto;
   width: 80%;
   border-radius: 16px;
-  height: 300px;
   box-shadow: 4px 4px 10px black;
   background-color: var(--background);
   display: flex;
@@ -31,7 +30,9 @@
 
 .question {
   text-align: center;
-  margin: 50px 0px;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px; 
 }
 
 .answer {
